@@ -1,0 +1,35 @@
+
+
+<div class="list-container">
+    <h3> Results from BUSCADOR: </h3>
+    <div class="row" style="margin-bottom: 20px; text-align: center;">
+        <ul class="col">
+            <li> Prod </li>
+            <li> Marca </li>
+            <li> Modelo </li>
+            <li> Cantidad </li>
+            <li> Stock </li>
+        </ul>
+    </div>
+    <div class="row item-row">
+        <div *ngFor="let item of items">
+            <ul class="col item-col pointer">
+                <li>
+                    <p> {{ item.name | titlecase }} </p>
+                </li>
+                <li>
+                    <p> {{ item.brand | titlecase }} </p>
+                </li>
+                <li>
+                    <p> {{ item.model |titlecase }} </p>
+                </li>
+                <li>
+                    <p> x{{ item.cant }} </p>
+                </li>
+                <li>
+                    <p> {{ item.stock }} </p>
+                </li>
+            </ul>
+        </div>    
+    </div>
+</div>
