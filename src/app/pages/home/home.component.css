@@ -38,28 +38,3 @@ div .list {
 .search input:focus {
     width: 100%;
 }
-
-.container {
-    margin: auto;
-}
-
-@media (min-width: 992px){
-    .container {
-        max-width: 768px;
-    }
-  
- }
-
- @media (min-width: 1200px){
-    .container {
-        max-width: 968px;
-    }
-    
- }
-
- @media (min-width: 1400px){
-    .container {
-        max-width: 1200px;
-    }
-  
- }

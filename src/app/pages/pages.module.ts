@@ -21,7 +21,8 @@ import { StockListComponent } from './stock-list/stock-list.component';
   exports: [
     HomeComponent,
     AuthComponent,
-    SalesComponent
+    SalesComponent,
+    StockListComponent
   ]
 })
 export class PagesModule { }

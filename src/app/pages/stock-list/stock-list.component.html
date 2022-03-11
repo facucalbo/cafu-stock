@@ -1,1 +1,50 @@
-<p>stock-list works!</p>
+
+
+<div class="search row">
+    <div class="col search-input">
+        <input type="text">
+    </div>
+
+    <div class="col dropdown">
+
+        <div class="dropdown-select pointer background-color-2">
+            <span class="select"> Order by </span>
+            <i></i>
+        </div>
+
+        <div class="dropdown-list pointer">
+            <div class="dropdown-list__item">Cantidad de stock</div>
+            <div class="dropdown-list__item">Alfabeticamente +</div>
+            <div class="dropdown-list__item">Alfabeticamente -</div>
+            <div class="dropdown-list__item">Agregados recientemente</div>
+            <div class="dropdown-list__item">Marca</div>
+        </div>
+
+        <!-- <label for="types"></label>
+        <select id="types" class="background-color-1 select">
+            <option value="Cantidad de Stock" class="value">Cantidad de Stock</option>
+            <option value="Alfabeticamente +">Alfabeticamente +</option>
+            <option value="Alfabeticamente -">Alfabeticamente -</option>
+            <option value="Agregados recientemente">Agregados recientemente</option>
+            <option value="Marca">Marca</option>
+        </select> -->
+    </div>
+</div>
+<div class="row">
+    <div class="col">
+        <app-list [items]="itemExample"></app-list>
+    </div>
+    <div class="col">
+        <div class="row">
+            <div class="col">
+                <button>Sell</button>
+            </div>
+            <div class="col">
+                <button>Update</button>
+            </div>
+            <div class="col">
+                <button>Delete</button>
+            </div>
+        </div>
+    </div>
+</div>

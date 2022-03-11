@@ -1,8 +1,64 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-color: #ecf0f1;
 }
 
 .pointer {
     cursor: pointer;
 }
+
+.background-color-1 {background-color: #2e4053;}
+.background-color-2 {background-color: #273746;}
+.background-color-3 {background-color: #ecf0f1;}
+.background-color-4 {background-color: #95a5a6;}
+.background-color-5 {background-color: #3498db;}
+.background-color-6 {background-color: #2980b9;}
+
+.container {
+    margin: auto;
+}
+
+
+.row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    width: 100%;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+}
+
+@media (min-width: 992px){
+    .container {
+        max-width: 768px;
+    }
+    
+    .row {
+        /* TODO=Responsive (breakpoints) */
+    }
+
+    .col {
+        /* TODO=Responsive (breakpoints) */
+    }
+  
+ }
+
+ @media (min-width: 1200px){
+    .container {
+        max-width: 968px;
+    }
+    
+ }
+
+ @media (min-width: 1400px){
+    .container {
+        max-width: 1200px;
+    }
+  
+ }

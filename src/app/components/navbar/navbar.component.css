@@ -27,11 +27,14 @@ li a {
     text-align: center;
     padding: 17px 16px;
     text-decoration: none;
+    box-sizing: border-box;
+    margin-bottom: 3px;
 }
 
 li a:hover {
-    border-bottom: 3px solid rgb(48, 100, 41);
-    color: rgb(48, 100, 41);
+    border-bottom: 3px solid #273746;
+    color: #273746;
+    margin-bottom: -3px;
 }
 
 .logo {
