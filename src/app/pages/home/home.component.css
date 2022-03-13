@@ -13,6 +13,7 @@ h1 {
 div .list {
     flex-shrink: 0;
     width: 75%;
+    height: 600px;
 }
 
 .search {

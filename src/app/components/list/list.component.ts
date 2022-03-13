@@ -9,10 +9,15 @@ import { Item } from 'src/app/interfaces/product-response';
 export class ListComponent implements OnInit {
 
   @Input() items: Item[] = [];
+  @Input() buttons: boolean = false;
 
   constructor() { }
 
   ngOnInit(): void {
+  }
+
+  orderByStock() {
+    this.items.sort( (a, b) => a.stock - b.stock );
   }
 
 }

@@ -1,10 +1,14 @@
 
+<div>
+    <h2>Lista de Stock</h2>
+</div>
 
 <div class="search row">
     <div class="col search-input">
         <input type="text">
     </div>
 
+    <!-- Order by -->
     <div class="col dropdown">
 
         <div class="dropdown-select pointer background-color-2">
@@ -13,7 +17,7 @@
         </div>
 
         <div class="dropdown-list pointer">
-            <div class="dropdown-list__item">Cantidad de stock</div>
+            <div class="dropdown-list__item" (click)="orderByStock()">Cantidad de stock</div>
             <div class="dropdown-list__item">Alfabeticamente +</div>
             <div class="dropdown-list__item">Alfabeticamente -</div>
             <div class="dropdown-list__item">Agregados recientemente</div>
@@ -30,21 +34,7 @@
         </select> -->
     </div>
 </div>
-<div class="row">
-    <div class="col">
-        <app-list [items]="itemExample"></app-list>
-    </div>
-    <div class="col">
-        <div class="row">
-            <div class="col">
-                <button>Sell</button>
-            </div>
-            <div class="col">
-                <button>Update</button>
-            </div>
-            <div class="col">
-                <button>Delete</button>
-            </div>
-        </div>
-    </div>
-</div>
+
+<!-- items list -->
+
+<app-list [items]="itemExample" [buttons]="true"></app-list>

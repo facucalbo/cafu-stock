@@ -3,14 +3,22 @@
     <ul class="nav">
         <div class="left">
             <li class="logo">
-                <img (click)="navigateTo('home')" class="pointer" src="/assets/vox-logo" alt="">
+                <img (click)="navigateTo('home')" class="pointer" src="/assets/box-logo.png" alt="">
             </li>
             <div class="items pointer">
                 <li>
                     <a (click)="navigateTo('stock')"> Stock list </a>
                 </li>
-                <li>
-                    <a> Sales </a>
+
+                <li class="dropdown">
+                    <div class="dropdown-select">
+                        <a> Sales </a>
+                    </div>
+
+                    <div class="dropdown-list">
+                        <div class="dropdown-list__item" (click)="navigateTo('realized-sales')">Realized</div>
+                        <div class="dropdown-list__item" (click)="navigateTo('unrealized-sales')" >Unrealized</div>
+                    </div>
                 </li>
             </div>
         </div>

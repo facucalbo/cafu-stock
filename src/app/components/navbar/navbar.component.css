@@ -7,7 +7,6 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    overflow: hidden;
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
@@ -15,10 +14,10 @@ ul {
 
 ul .left {
     display: flex;
+    flex-basis: 50%;
 }
 
 li {
-    display: inline;
     float: left;
 }
 
@@ -49,5 +48,101 @@ li a:hover {
 
 .items {
     margin-left: 10px;
+    flex-basis: 100%;
 }
 
+.dropdown {
+    width: 20%;
+}
+
+.dropdown a {
+    height: 100%;
+    margin: 0;
+}
+
+.dropdown-select {
+    box-sizing: border-box;
+    background-image: url("/assets/dropdown-arrow.png");
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 20px;
+    padding-left: 0.6rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dropdown:hover .dropdown-list {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-list {
+    position: fixed;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+    background-color: white;
+    opacity: 0;
+    visibility: 0;
+    border-radius: 6px;
+}
+
+.dropdown-list__item {
+    background-color: white;
+    padding: 0.6rem;
+    border-radius: 6px;
+}
+
+.dropdown-list__item:hover {
+    background-color: #273746;
+    color: white;
+}
+
+/* .dropdown {
+    position: relative;
+}
+
+.dropdown-select {
+    box-sizing: border-box;
+    background-image: url("/assets/white-drpdwn.png");
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 20px;
+}
+
+.dropdown:hover .dropdown-list {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-select {
+    padding-left: 0.6rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.dropdown-list {
+    border-radius: 4px;
+    position: absolute;
+    top: 110%;
+    left: 0;
+    right: 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s linear, visibility 0.2s linear;
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, 0.2);
+    background-color: white;
+}
+
+.dropdown-list__item {
+    background-color: white;
+    border-radius: 6px;
+    padding: 0.6rem;
+}
+
+.dropdown-list__item:hover {
+    background-color: #273746;
+    color: white;
+} */

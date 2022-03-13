@@ -4,6 +4,13 @@ body {
     background-color: #ecf0f1;
 }
 
+.btn {
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    border: 0;
+}
+
 .pointer {
     cursor: pointer;
 }

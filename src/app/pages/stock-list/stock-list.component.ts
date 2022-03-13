@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Item } from 'src/app/interfaces/product-response';
+import { Item } from '../../interfaces/product-response';
 
 @Component({
   selector: 'app-stock-list',
@@ -38,9 +38,15 @@ export class StockListComponent implements OnInit {
     }
   ]
 
-  constructor() { }
+  constructor( ) { }
 
   ngOnInit(): void {
+  }
+
+  orderByStock() {
+    console.log(this.itemExample);
+    this.itemExample.sort(( a, b ) => b.stock - a.stock );
+    console.log(this.itemExample);
   }
 
 }

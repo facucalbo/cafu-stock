@@ -4,10 +4,10 @@
 </div>
 
 <div class="home">
-    <div class="list">
+    <cdk-virtual-scroll-viewport itemSize="50" class="list">
         <h3>Results from BUSCADOR</h3>
         <app-list [items]="itemExample"></app-list>
-    </div>
+    </cdk-virtual-scroll-viewport>
 
     <div class="search">
         <input type="text" placeholder="Search...">

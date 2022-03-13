@@ -1,6 +1,6 @@
 
-<div class="col" style="margin-bottom: 20px; text-align: center;">
-    <ul class="row">
+<div class="col" style="margin-bottom: 20px; padding-left: 20px;">
+    <ul class="row title-row">
         <li> Prod </li>
         <li> Marca </li>
         <li> Modelo </li>
@@ -8,9 +8,10 @@
         <li> Stock </li>
     </ul>
 </div>
-<div class="col item-row">
-    <div *ngFor="let item of items">
-        <ul class="row item-col pointer">
+
+<div *ngFor="let item of items">
+    <div class="row">
+        <ul class="row item-col product-row pointer">
             <li>
                 <p> {{ item.name | titlecase }} </p>
             </li>
@@ -27,5 +28,50 @@
                 <p> {{ item.stock }} </p>
             </li>
         </ul>
+        <ul class="buttons-row" *ngIf="buttons">
+            <li >
+                <button class="btn pointer">Sell</button>
+            </li>
+            <li> 
+                <button class="btn pointer">Update</button>
+            </li>
+            <li>
+                <button class="btn pointer">Delete</button>
+            </li>
+        </ul>
+        
     </div>
 </div>
+
+<!-- <div class="" *ngFor="let item of items">
+    <div style="display: flex; flex-direction: row;">
+        <ul class="row item-col pointer row-items" style="flex-basis: 75%;">
+            <li>
+                {{ item.name | titlecase }} 
+            </li>
+            <li>
+                {{ item.brand | titlecase }} 
+            </li>
+            <li>
+                {{ item.model |titlecase }} 
+            </li>
+            <li>
+                x{{ item.cant }} 
+            </li>
+            <li>
+                {{ item.stock }} 
+            </li>
+        </ul>
+        <ul class="" style="flex-basis: 25%; display: flex;">
+            <li *ngIf="buttons">
+                <button class="btn pointer">Sell</button>
+            </li>
+            <li *ngIf="buttons"> 
+                <button class="btn pointer">Update</button>
+            </li>
+            <li *ngIf="buttons">
+                <button class="btn pointer">Delete</button>
+            </li>
+        </ul>
+    </div>
+</div> -->
