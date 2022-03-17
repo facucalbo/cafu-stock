@@ -1,1 +1,22 @@
-<p>unrealized works!</p>
+<div>
+    <h2>Ventas a confirmar</h2>
+</div>
+
+<div class="col list-container">
+    <div class="sale-info">
+        <h4>Nro. Pedido: xxxx</h4>
+    </div>
+    <cdk-virtual-scroll-viewport itemSize="50" class="viewport">
+        <app-list [items]="itemExample"></app-list>
+    </cdk-virtual-scroll-viewport>
+
+    <div class="buttons">
+        <button class="btn cancel">
+            Cancelar
+        </button>
+        
+        <button class="btn">
+            Concretar
+        </button>
+    </div>
+</div>

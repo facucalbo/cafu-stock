@@ -9,6 +9,11 @@ body {
     color: white;
     text-align: center;
     border: 0;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #2980b9;
 }
 
 .pointer {
