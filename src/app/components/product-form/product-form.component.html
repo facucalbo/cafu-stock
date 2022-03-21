@@ -1,0 +1,36 @@
+<form [formGroup]="forma" (ngSubmit)="save()">
+
+    <div class="row">
+        <div class="field">
+            <!-- <label for="type">Type: </label> -->
+            <input type="text" placeholder="type" formControlName="type">
+        </div>
+    
+        <div class="field">
+            <!-- <label for="brand">Brand: </label> -->
+            <input type="text" placeholder="brand" formControlName="brand">
+        </div>
+    
+        <div class="field">
+            <!-- <label for="model">Model: </label> -->
+            <input type="text" placeholder="model" formControlName="model">
+        </div>
+    
+        <div class="field">
+            <!-- <label for="cant">Quantity: </label> -->
+            <input type="text" placeholder="cant" formControlName="cant">
+        </div>
+    
+        <div class="field">
+            <!-- <label for="stock">Stock: </label> -->
+            <input type="text" placeholder="stock" formControlName="stock">
+        </div>
+    
+        <div class="field">
+            <!-- <label for="price">Price: </label> -->
+            <input type="text" placeholder="price" formControlName="price">
+        </div>
+    
+    </div>
+    <button type="submit">Add</button>
+</form>

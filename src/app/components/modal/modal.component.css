@@ -1,0 +1,43 @@
+.modal {
+    width: 40%;
+    height: 600px;
+    background-color: white;
+    margin: auto;
+    overflow: hidden;
+    padding: 10px;
+}
+
+.modal-header {
+    height: 10%;
+    /* border: 2px solid red; */
+    border-bottom: 2px solid #cccccc;
+    margin: 0 10px 0 10px;
+}
+
+.modal-header h3 {
+    display: inline-block;
+}
+
+.close {
+    width: 35px;
+    height: 35px;
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+    background-image: url("/assets/close.png");
+    background-size: 35px 35px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    border: 0;
+    float: right;
+}
+
+.modal-body {
+    height: 80%;
+    /* border: 2px solid blue; */
+}
+
+.modal-footer {
+    height: 10%;
+    /* border: 2px solid green; */
+}
