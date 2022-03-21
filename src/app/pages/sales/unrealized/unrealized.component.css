@@ -1,0 +1,44 @@
+h2 {
+    text-align: center;
+    margin: 60px;
+}
+
+.viewport {
+    width: 100%;
+    height: 400px;
+}
+
+.col {
+    flex-grow: 1;
+}
+
+.btn {
+    width: 47%;
+    height: 50px;
+    border-radius: 10px;
+}
+
+.cancel {
+    background-color: rgb(187, 0, 0);
+}
+
+.cancel:hover {
+    background-origin: rgb(163, 1, 1); 
+}
+
+.list-container {
+    padding: 10px;
+    background-color: #00000011;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.sale-info {
+    border-bottom: 2px solid rgb(209, 207, 207);
+}
+
+.buttons {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}

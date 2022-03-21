@@ -13,6 +13,7 @@ h1 {
 div .list {
     flex-shrink: 0;
     width: 75%;
+    height: 600px;
 }
 
 .search {
@@ -38,28 +39,3 @@ div .list {
 .search input:focus {
     width: 100%;
 }
-
-.container {
-    margin: auto;
-}
-
-@media (min-width: 992px){
-    .container {
-        max-width: 768px;
-    }
-  
- }
-
- @media (min-width: 1200px){
-    .container {
-        max-width: 968px;
-    }
-    
- }
-
- @media (min-width: 1400px){
-    .container {
-        max-width: 1200px;
-    }
-  
- }

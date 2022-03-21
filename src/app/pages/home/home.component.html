@@ -1,17 +1,13 @@
 
-
-<div class="container">
-    <app-navbar class="nav"></app-navbar>
-</div>
-
 <div class="title">
     <h1>Cafu Stock</h1>
 </div>
 
-<div class="container home">
-    <div class="list">
+<div class="home">
+    <cdk-virtual-scroll-viewport itemSize="50" class="list">
+        <h3>Results from BUSCADOR</h3>
         <app-list [items]="itemExample"></app-list>
-    </div>
+    </cdk-virtual-scroll-viewport>
 
     <div class="search">
         <input type="text" placeholder="Search...">
