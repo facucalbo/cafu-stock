@@ -1,0 +1,53 @@
+
+.row {
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.field {
+    font-size: 1rem;
+    flex-basis: 33%;
+    display:block;
+    margin: 5px;
+    margin-top: 10px;
+    position: relative;
+}
+
+.field label {
+  position:absolute;
+	top:0px;
+	left:0px;
+	font-size:16px;
+	color:#fff;
+	transition: all 0.5s ease-in-out;
+}
+
+.form__field {
+  height: 40px;
+  width: auto;
+  font-size: 0.9rem;
+  background: transparent;
+  margin: auto;
+  position: relative;
+  margin: auto;
+  border: 0;
+  border-bottom: 2px solid #d7dcdd;
+  padding-bottom: 0;
+}
+
+.form__field:focus {
+  border-color: #95a5a6;
+  color: #273746;
+  outline: 0;
+}
+:focus::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  color: #273746;
+}
+
+.btn {
+  height: 40px;
+  width: 50%;
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+}

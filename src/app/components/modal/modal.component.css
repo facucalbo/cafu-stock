@@ -1,15 +1,29 @@
 .modal {
     width: 40%;
-    height: 600px;
+    display: block;
     background-color: white;
     margin: auto;
     overflow: hidden;
     padding: 10px;
 }
 
+@media (max-width: 992px) {
+
+  .modal {
+    width: 60%;
+  }
+
+}
+
+@media (max-width: 492px) {
+  .modal {
+    width: 90%;
+  }
+}
+
 .modal-header {
-    height: 10%;
-    /* border: 2px solid red; */
+  display: block;
+    height: 15%;
     border-bottom: 2px solid #cccccc;
     margin: 0 10px 0 10px;
 }
@@ -30,14 +44,35 @@
     background-repeat: no-repeat;
     border: 0;
     float: right;
+    cursor: pointer;
+    opacity: 0.7;
+}
+
+.close:hover {
+  opacity: 1;
 }
 
 .modal-body {
     height: 80%;
-    /* border: 2px solid blue; */
+    margin-top: 40px;
+    margin-bottom: 20px;
 }
 
 .modal-footer {
     height: 10%;
-    /* border: 2px solid green; */
+}
+
+.confirm-btn {
+  float: right;
+  height: 40px;
+  color: white;
+  border: 0;
+  border-radius: 6px;
+  background-color: rgb(187, 0, 0);
+  width: 100%;
+  cursor: pointer;
+}
+
+.confirm-btn:hover {
+  background-color: rgb(163, 1, 1);
 }

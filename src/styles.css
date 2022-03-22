@@ -50,7 +50,7 @@ body {
     .container {
         max-width: 768px;
     }
-    
+
     .row {
         /* TODO=Responsive (breakpoints) */
     }
@@ -58,19 +58,19 @@ body {
     .col {
         /* TODO=Responsive (breakpoints) */
     }
-  
+
  }
 
  @media (min-width: 1200px){
     .container {
         max-width: 968px;
     }
-    
+
  }
 
  @media (min-width: 1400px){
     .container {
         max-width: 1200px;
     }
-  
+
  }
