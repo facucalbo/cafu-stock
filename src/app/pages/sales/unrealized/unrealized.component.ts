@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Item } from 'src/app/interfaces/product-response';
+import { ItemResponse } from 'src/app/interfaces/product-response';
 
 @Component({
   selector: 'app-unrealized',
@@ -8,7 +8,7 @@ import { Item } from 'src/app/interfaces/product-response';
 })
 export class UnrealizedComponent implements OnInit {
 
-  public itemExample: Item[] = [
+  public itemExample: ItemResponse[] = [
     {
       id:    '1111',
       type:    'pila',

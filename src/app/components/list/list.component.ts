@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Item } from 'src/app/interfaces/product-response';
+import { ItemResponse } from 'src/app/interfaces/product-response';
 
 @Component({
   selector: 'app-list',
@@ -8,7 +8,7 @@ import { Item } from 'src/app/interfaces/product-response';
 })
 export class ListComponent implements OnInit {
 
-  @Input() items: Item[] = [];
+  @Input() items: ItemResponse[] = [];
   @Input() buttons: boolean = false;
 
   constructor() { }

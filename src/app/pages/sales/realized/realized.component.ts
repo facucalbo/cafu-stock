@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Item } from '../../../interfaces/product-response';
+import { ItemResponse } from '../../../interfaces/product-response';
 
 @Component({
   selector: 'app-realized',
@@ -10,7 +10,7 @@ import { Item } from '../../../interfaces/product-response';
 export class RealizedComponent implements OnInit {
 
   items = Array.from({length: 100000}).map((_, i) => `Item #${i}`);
-  public itemExample: Item[] = [
+  public itemExample: ItemResponse[] = [
     {
       id:    '1111',
       type:    'pila',

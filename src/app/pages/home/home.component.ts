@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Item } from 'src/app/interfaces/product-response';
+import { ItemResponse } from 'src/app/interfaces/product-response';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class HomeComponent implements OnInit {
 
-  public itemExample: Item[] = [
+  public itemExample: ItemResponse[] = [
     {
       id:    '1111',
       type:    'pila',

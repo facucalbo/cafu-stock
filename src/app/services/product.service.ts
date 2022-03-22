@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Item } from '../interfaces/product-response';
+import { ItemRequest, ItemResponse } from '../interfaces/product-response';
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -12,8 +12,8 @@ export class ProductService {
 
   constructor( private http: HttpClient ) { }
 
-  addNewProduct( product: Item): Observable<Item> {
-    return this.http.post<Item>(` ${this.basicUrl}/product`, product)
+  addNewProduct( product: ItemRequest): Observable<ItemRequest> {
+    return this.http.post<ItemRequest>(` ${this.basicUrl}/product`, product)
   }
 
 }

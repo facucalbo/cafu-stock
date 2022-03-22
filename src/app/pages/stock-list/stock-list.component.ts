@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from 'src/app/services/data.service';
 import { ProductService } from 'src/app/services/product.service';
-import { Item } from '../../interfaces/product-response';
+import { ItemResponse } from '../../interfaces/product-response';
 
 @Component({
   selector: 'app-stock-list',
@@ -10,7 +10,7 @@ import { Item } from '../../interfaces/product-response';
 })
 export class StockListComponent implements OnInit {
 
-  public itemExample: Item[] = [
+  public itemExample: ItemResponse[] = [
     {
       id:    '1111',
       type:    'pila',
