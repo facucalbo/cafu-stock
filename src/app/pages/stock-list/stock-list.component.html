@@ -40,9 +40,9 @@
 </div>
 
 <div class="modal-bg" *ngIf="this.dataService.modalIsOpen">
-    <app-modal class="modal"></app-modal>
+    <app-modal class="modal" (pushProduct)="pushProduct($event)"></app-modal>
 </div>
 
 <!-- items list -->
 
-<app-list [items]="itemExample" [buttons]="true"></app-list>
+<app-list [items]="products" [buttons]="true"></app-list>

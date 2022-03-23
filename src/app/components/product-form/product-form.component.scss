@@ -51,3 +51,18 @@
   margin: auto;
   margin-top: 20px;
 }
+
+.is-invalid::placeholder {
+  border-color: #ff1f1f;
+  color: #ff1f1f;
+}
+
+.is-invalid {
+  border-color: #ff1f1f;
+  color: #ff1f1f;
+}
+
+span {
+  color: #ff1f1f;
+  font-size: 0.8rem;
+}

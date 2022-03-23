@@ -3,32 +3,38 @@
     <div class="row">
         <div class="field">
             <label for="type" class="form__label">Type </label>
-            <input type="text" placeholder="Type" formControlName="type" class="form__field">
+            <input type="text" placeholder="Type" formControlName="type" class="form__field" [class.is-invalid]="validate('type')">
+            <span *ngIf="validate('type')">required</span>
         </div>
 
         <div class="field">
             <label for="brand">Brand </label>
-            <input type="text" placeholder="Brand" formControlName="brand" class="form__field">
+            <input type="text" placeholder="Brand" formControlName="brand" class="form__field" [class.is-invalid]="validate('brand')">
+            <span *ngIf="validate('brand')">required</span>
         </div>
 
         <div class="field">
             <label for="model">Model </label>
-            <input type="text" placeholder="Model" formControlName="model" class="form__field">
+            <input type="text" placeholder="Model" formControlName="model" class="form__field" [class.is-invalid]="validate('model')">
+            <span *ngIf="validate('model')">required</span>
         </div>
 
         <div class="field">
             <label for="cant">Quantity </label>
-            <input type="number" placeholder="Cant" formControlName="cant" class="form__field">
+            <input type="number" placeholder="Cant" formControlName="cant" class="form__field" [class.is-invalid]="validate('cant')">
+            <span *ngIf="validate('cant')">required</span>
         </div>
 
         <div class="field">
             <label for="stock">Stock </label>
-            <input type="number" placeholder="Stock" formControlName="stock" class="form__field">
+            <input type="number" placeholder="Stock" formControlName="stock" class="form__field" [class.is-invalid]="validate('stock')">
+            <span *ngIf="validate('stock')">required</span>
         </div>
 
         <div class="field">
             <label for="price">Price </label>
-            <input type="number" placeholder="Price $ARS" formControlName="price" class="form__field">
+            <input type="number" placeholder="Price $ARS" formControlName="price" class="form__field" [class.is-invalid]="validate('price')">
+            <span *ngIf="validate('price')">required</span>
         </div>
 
     </div>

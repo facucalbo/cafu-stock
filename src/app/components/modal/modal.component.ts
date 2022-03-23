@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Body } from 'src/app/interfaces/product-response';
 import { DataService } from 'src/app/services/data.service';
 
 @Component({
@@ -13,8 +14,14 @@ export class ModalComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  @Output() pushProduct = new EventEmitter<Body>();
+
   closeModal() {
     this.dataService.modalIsOpen = false
   }
 
+  sendModal( form: Body ) {
+    this.dataService.modalIsOpen = false;
+    this.pushProduct.emit( form );
+  }
 }
