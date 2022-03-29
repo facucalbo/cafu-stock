@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
 import { Body } from '../../interfaces/product-response';
 
 @Component({
@@ -10,6 +10,7 @@ export class ListComponent implements OnInit {
 
   @Input() items: Body[] = [];
   @Input() buttons: boolean = false;
+  @Output() delete = new EventEmitter<String>();
 
   constructor() { }
 
@@ -20,4 +21,8 @@ export class ListComponent implements OnInit {
     this.items.sort( (a, b) => a.stock - b.stock );
   }
 
+  deleteProduct( id: String ) {
+    console.log(id);
+    this.delete.emit(id);
+  }
 }

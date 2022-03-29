@@ -7,5 +7,5 @@ export class DataService {
 
   constructor() { }
 
-  modalIsOpen: boolean = true;
+  modalIsOpen: boolean = false;
 }

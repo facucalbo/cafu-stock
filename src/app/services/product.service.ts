@@ -23,6 +23,17 @@ export class ProductService {
       .pipe(
         map( (resp) => resp.body)
       );
-  } 
+  }
+
+  searchProduct( text: String ): Observable<Body[]> {
+    return this.http.get<ItemResponse>(`${this.basicUrl}/product/${ text }`)
+      .pipe(
+        map( resp => resp.body)
+      );
+  }
+
+  deleteProduct( id: String ) {
+    return this.http.delete(`${this.basicUrl}/product/${ id }`);
+  }
 
 }

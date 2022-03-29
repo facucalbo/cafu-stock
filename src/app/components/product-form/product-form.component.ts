@@ -20,12 +20,12 @@ export class ProductFormComponent implements OnInit {
   }
 
   forma: FormGroup = this.fb.group({
-    type: ['Pilas', [Validators.required, Validators.minLength(2)]],
-    brand: ['Duracell', [Validators.required, Validators.minLength(2)]],
-    model: ['AAA', [Validators.required, Validators.minLength(2)]],
-    cant: ['30', Validators.required],
-    stock: ['20', Validators.required],
-    price: ['100', Validators.required],
+    type: ['', [Validators.required, Validators.minLength(2)]],
+    brand: ['', [Validators.required, Validators.minLength(2)]],
+    model: ['', [Validators.required, Validators.minLength(2)]],
+    cant: ['', Validators.required],
+    stock: ['', Validators.required],
+    price: ['', Validators.required],
   });
   
   ngOnInit(): void {

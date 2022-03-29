@@ -5,7 +5,7 @@
 
 <div class="search row">
     <div class="col search-input">
-        <input type="text">
+        <input #search type="text" (keyup.enter)="searchProducts(search.value)">
     </div>
 
     <div>
@@ -45,4 +45,4 @@
 
 <!-- items list -->
 
-<app-list [items]="products" [buttons]="true"></app-list>
+<app-list [items]="products" (delete)="deleteProduct($event)" [buttons]="true"></app-list>

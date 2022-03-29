@@ -29,6 +29,13 @@ export class StockListComponent implements OnInit {
       })
   }
 
+  searchProducts( text: String ) {
+    this.productService.searchProduct( text )
+      .subscribe( p => {
+        this.products = p;
+      })
+  }
+
   orderByStock() {
     console.log(this.products);
     this.products.sort(( a, b ) => b.stock - a.stock );
@@ -41,6 +48,14 @@ export class StockListComponent implements OnInit {
 
   pushProduct(product: Body) {
     this.products.push(product);
+  }
+
+  deleteProduct( id: String ) {
+    console.log('eliminando produyctik');
+    this.productService.deleteProduct( id )
+      .subscribe( response => {
+        console.log(response);
+      })
   }
 
 }
