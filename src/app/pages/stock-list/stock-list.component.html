@@ -27,22 +27,24 @@
             <div class="dropdown-list__item">Agregados recientemente</div>
             <div class="dropdown-list__item">Marca</div>
         </div>
-
-        <!-- <label for="types"></label>
-        <select id="types" class="background-color-1 select">
-            <option value="Cantidad de Stock" class="value">Cantidad de Stock</option>
-            <option value="Alfabeticamente +">Alfabeticamente +</option>
-            <option value="Alfabeticamente -">Alfabeticamente -</option>
-            <option value="Agregados recientemente">Agregados recientemente</option>
-            <option value="Marca">Marca</option>
-        </select> -->
     </div>
 </div>
 
 <div class="modal-bg" *ngIf="this.dataService.modalIsOpen">
-    <app-modal class="modal" (pushProduct)="pushProduct($event)"></app-modal>
+    <app-modal class="modal" [form]="true" (pushProduct)="pushProduct($event)"></app-modal>
 </div>
 
 <!-- items list -->
 
 <app-list [items]="products" (delete)="deleteProduct($event)" [buttons]="true"></app-list>
+
+<!--
+
+  HACER BOTON SELL UPDATE Y DELETE FUERA DEL COMPONENTE LIST Y PONER 3 BOTONES EN STOCK LIST COMPONENT
+  DE AHI LO QUE PODES HACER ES QUE EN EL LIST CUANDO SE HACE CLICK SOBRE UNA FILA, LE PASA POR OUTPUT EL OBJECT ID DEL Q SE CLICKEO, ENTONCES DE AHI SE PUEDE ELIMINAR,
+
+  MODAL:
+  PODES CAMBIAR LA FOMRA DE ABRIR EL MODAL Y USAR UN EVENTO
+  TAMBIEN PODES HACER UN NGIF O UN NGTEMPLATE PARA MOSTRAR UN CONTENIDO U OTRO DENTRO DEL MODAL
+
+ -->

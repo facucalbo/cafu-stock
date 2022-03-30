@@ -1,6 +1,7 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Body } from 'src/app/interfaces/product-response';
 import { DataService } from 'src/app/services/data.service';
+import { ProductFormComponent } from '../product-form/product-form.component';
 
 @Component({
   selector: 'app-modal',
@@ -15,6 +16,8 @@ export class ModalComponent implements OnInit {
   }
 
   @Output() pushProduct = new EventEmitter<Body>();
+  @Input() form: boolean = false;
+  @Input() deleted: boolean = false;
 
   closeModal() {
     this.dataService.modalIsOpen = false

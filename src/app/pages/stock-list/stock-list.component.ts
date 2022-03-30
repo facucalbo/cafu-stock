@@ -24,7 +24,6 @@ export class StockListComponent implements OnInit {
   getProducts() {
     this.productService.getProducts()
       .subscribe( products => {
-        console.log(products);
         this.products = products;
       })
   }
@@ -37,9 +36,7 @@ export class StockListComponent implements OnInit {
   }
 
   orderByStock() {
-    console.log(this.products);
     this.products.sort(( a, b ) => b.stock - a.stock );
-    console.log(this.products);
   }
 
   openModal() {
@@ -51,10 +48,12 @@ export class StockListComponent implements OnInit {
   }
 
   deleteProduct( id: String ) {
-    console.log('eliminando produyctik');
     this.productService.deleteProduct( id )
       .subscribe( response => {
         console.log(response);
+        this.products.filter( (p, index) => {
+          if( p._id == id ) this.products.splice(index);
+        })
       })
   }
 

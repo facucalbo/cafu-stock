@@ -22,7 +22,6 @@ export class ListComponent implements OnInit {
   }
 
   deleteProduct( id: String ) {
-    console.log(id);
     this.delete.emit(id);
   }
 }

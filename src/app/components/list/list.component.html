@@ -4,7 +4,7 @@
         <li> Prod </li>
         <li> Marca </li>
         <li> Modelo </li>
-        <li> Cantidad </li>
+        <li> Bulto </li>
         <li> Stock </li>
     </ul>
 </div>
@@ -32,14 +32,14 @@
             <li >
                 <button class="btn pointer">Sell</button>
             </li>
-            <li> 
+            <li>
                 <button class="btn pointer">Update</button>
             </li>
             <li>
                 <button class="btn pointer" (click)="deleteProduct(item._id)">Delete</button>
             </li>
         </ul>
-        
+
     </div>
 </div>
 
@@ -47,26 +47,26 @@
     <div style="display: flex; flex-direction: row;">
         <ul class="row item-col pointer row-items" style="flex-basis: 75%;">
             <li>
-                {{ item.name | titlecase }} 
+                {{ item.name | titlecase }}
             </li>
             <li>
-                {{ item.brand | titlecase }} 
+                {{ item.brand | titlecase }}
             </li>
             <li>
-                {{ item.model |titlecase }} 
+                {{ item.model |titlecase }}
             </li>
             <li>
-                x{{ item.cant }} 
+                x{{ item.cant }}
             </li>
             <li>
-                {{ item.stock }} 
+                {{ item.stock }}
             </li>
         </ul>
         <ul class="" style="flex-basis: 25%; display: flex;">
             <li *ngIf="buttons">
                 <button class="btn pointer">Sell</button>
             </li>
-            <li *ngIf="buttons"> 
+            <li *ngIf="buttons">
                 <button class="btn pointer">Update</button>
             </li>
             <li *ngIf="buttons">
