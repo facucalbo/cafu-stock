@@ -1,12 +1,17 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HomeComponent } from './home/home.component';
-import { AuthComponent } from './auth/auth.component';
 import { ComponentsModule } from '../components/components.module';
+import { ScrollingModule } from '@angular/cdk/scrolling';
+import { AppRoutingModule } from '../app-routing.module';
+
+import { AuthComponent } from './auth/auth.component';
 import { StockListComponent } from './stock-list/stock-list.component';
 import { RealizedComponent } from './sales/realized/realized.component';
 import { UnrealizedComponent } from './sales/unrealized/unrealized.component';
-import { ScrollingModule } from '@angular/cdk/scrolling';
+import { LoginComponent } from './auth/login/login.component';
+import { SignupComponent } from './auth/signup/signup.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -15,12 +20,16 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     AuthComponent,
     StockListComponent,
     RealizedComponent,
-    UnrealizedComponent
+    UnrealizedComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     CommonModule,
     ComponentsModule,
-    ScrollingModule
+    ScrollingModule,
+    AppRoutingModule,
+    ReactiveFormsModule
   ],
   exports: [
     HomeComponent,

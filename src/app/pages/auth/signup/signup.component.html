@@ -1,0 +1,41 @@
+<div class="box">
+    <div class="design">
+        <h2>CafuStock</h2>
+    </div>
+
+    <div class="form">
+        <h2>Create Account</h2>
+
+        <form [formGroup]="forma" (ngSubmit)="save()">
+            <div class="form-container">
+                <div class="field">
+                    <input type="text" placeholder="Name" formControlName="name" class="form__field" [class.is-invalid]="validate('name')">
+                    <span *ngIf="validate('name')">{{ formSpans.name }}</span>
+                </div>
+    
+                <div class="field">
+                    <input type="text" placeholder="Email" formControlName="email" class="form__field" [class.is-invalid]="validate('email')">
+                    <span *ngIf="validate('email')">{{ formSpans.email }}</span>
+                </div>
+    
+                <div class="field">
+                    <input type="text" placeholder="Username" formControlName="username" class="form__field" id="username" [class.is-invalid]="validate('username')">
+                    <span *ngIf="validate('username')" id="username-label">{{ formSpans.username }}</span>
+                </div>
+    
+                <div class="field">
+                    <input type="password" placeholder="Password" formControlName="password" class="form__field" [class.is-invalid]="validate('password')">
+                    <span *ngIf="validate('password')">{{ formSpans.password }}</span>
+                </div>
+    
+                <div class="field">
+                    <input type="password" placeholder="Re-enter password" formControlName="password2" class="form__field" [class.is-invalid]="validate('password2')">
+                    <span *ngIf="validate('password2')">{{ formSpans.password2 }}</span>
+                </div>
+                
+                <button class="btn">Sign Up</button>
+            </div>
+        </form>
+
+    </div>
+</div>

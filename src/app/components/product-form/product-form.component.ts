@@ -23,7 +23,7 @@ export class ProductFormComponent implements OnInit {
     type: ['', [Validators.required, Validators.minLength(2)]],
     brand: ['', [Validators.required, Validators.minLength(2)]],
     model: ['', [Validators.required, Validators.minLength(2)]],
-    cant: ['', Validators.required],
+    package: ['', Validators.required],
     stock: ['', Validators.required],
     price: ['', Validators.required],
   });

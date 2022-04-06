@@ -55,7 +55,7 @@ h2 {
 .btn:hover {
     color: white;
     background-color: #273746;
-    border: 0;
+    border-color: #273746;
 }
 
 .dropdown {
@@ -126,4 +126,22 @@ h2 {
 
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 1000;
+}
+
+.list-abm {
+    margin-top: 20px;
+}
+
+.list {
+    flex-grow: 1;
+}
+
+.abm {
+    flex-grow: 1;
+    justify-self: center;
+}
+
+.abm .btn {
+    height: 40px;
+    width: 46%;
 }

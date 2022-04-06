@@ -12,6 +12,7 @@ import { Body } from '../../interfaces/product-response';
 export class StockListComponent implements OnInit {
 
   public products: Body[] = [];
+  public selectedProductId: string = '';
 
   constructor( private productService: ProductService, public dataService: DataService ) { }
 
@@ -28,7 +29,7 @@ export class StockListComponent implements OnInit {
       })
   }
 
-  searchProducts( text: String ) {
+  searchProducts( text: string ) {
     this.productService.searchProduct( text )
       .subscribe( p => {
         this.products = p;
@@ -45,16 +46,29 @@ export class StockListComponent implements OnInit {
 
   pushProduct(product: Body) {
     this.products.push(product);
+    this.searchProducts('');
   }
 
-  deleteProduct( id: String ) {
-    this.productService.deleteProduct( id )
+  deleteProduct() {
+    this.productService.deleteProduct( this.selectedProductId )
       .subscribe( response => {
-        console.log(response);
-        this.products.filter( (p, index) => {
-          if( p._id == id ) this.products.splice(index);
-        })
+        // this.products.filter( (p, index) => {
+        //   console.log(p._id + ' p._id ');
+        //   console.log(this.selectedProductId + ' selectedProductId');
+        //   if( p._id == this.selectedProductId ) {
+        //     console.log(p._id);
+        //     console.log(index);
+        //     this.products.splice(index, 1);
+        //   }
+        // })
       })
+      const found = this.products.findIndex( p => p._id == this.selectedProductId)
+      this.products.splice(found, 1);
+      this.selectedProductId = '';
+  }
+
+  selectedProduct( id: string ) {
+    this.selectedProductId = id;
   }
 
 }

@@ -4,7 +4,7 @@
 </div>
 
 <div class="search row">
-    <div class="col search-input">
+    <div class="search-input">
         <input #search type="text" (keyup.enter)="searchProducts(search.value)">
     </div>
 
@@ -35,8 +35,15 @@
 </div>
 
 <!-- items list -->
-
-<app-list [items]="products" (delete)="deleteProduct($event)" [buttons]="true"></app-list>
+<div class="row list-abm">
+    <div class="list">
+        <app-list [items]="products" (selected)="selectedProduct($event)"></app-list>
+    </div>
+    <div class="abm">
+        <button class="btn btn-update"> Update </button>
+        <button class="btn btn-delete" (click)="deleteProduct()"> Delete </button>
+    </div>
+</div>
 
 <!--
 

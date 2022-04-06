@@ -10,7 +10,7 @@ export class ListComponent implements OnInit {
 
   @Input() items: Body[] = [];
   @Input() buttons: boolean = false;
-  @Output() delete = new EventEmitter<String>();
+  @Output() selected = new EventEmitter<string>();
 
   constructor() { }
 
@@ -21,7 +21,7 @@ export class ListComponent implements OnInit {
     this.items.sort( (a, b) => a.stock - b.stock );
   }
 
-  deleteProduct( id: String ) {
-    this.delete.emit(id);
+  selectedRow(id: string) {
+    this.selected.emit(id);
   }
 }
