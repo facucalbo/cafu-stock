@@ -11,14 +11,12 @@
                 </li>
 
                 <li class="dropdown">
-                    <div class="dropdown-select">
-                        <a> Sales </a>
-                    </div>
+                    <!-- <div class="dropdown-select"> -->
+                    <!-- <a> Sales </a> -->
+                    <!-- </div> -->
 
-                    <div class="dropdown-list">
-                        <div class="dropdown-list__item" (click)="navigateTo('realized-sales')">Realized</div>
-                        <div class="dropdown-list__item" (click)="navigateTo('unrealized-sales')" >Unrealized</div>
-                    </div>
+                    <a (click)="navigateTo('realized-sales')">Realized</a>
+                    <a (click)="navigateTo('unrealized-sales')" >Unrealized</a>
                 </li>
             </div>
         </div>

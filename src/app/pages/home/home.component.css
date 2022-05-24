@@ -38,4 +38,29 @@ div .list {
 
 .search input:focus {
     width: 100%;
+<<<<<<< Updated upstream
 }
+=======
+}
+
+button {
+    height: 40px;
+}
+
+.btn {
+    border-radius: 6px;
+    font-size: 1rem;
+    margin-top: 5px;
+}
+
+.setup {
+  width: 100%;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.item {
+  width: 500px;
+  background-color: aqua;
+}
+>>>>>>> Stashed changes
