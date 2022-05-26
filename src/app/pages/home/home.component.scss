@@ -4,10 +4,13 @@ h1 {
     margin: 60px;
 }
 
-.home {
+h3 {
+  margin: 0;
+  margin-top: 5px;
+}
+
+.dashboard {
     width: 100%;
-    display: flex;
-    flex-direction: row;
 }
 
 div .list {
@@ -38,9 +41,6 @@ div .list {
 
 .search input:focus {
     width: 100%;
-<<<<<<< Updated upstream
-}
-=======
 }
 
 button {
@@ -57,10 +57,42 @@ button {
   width: 100%;
   display: flex;
   flex-flow: row wrap;
+  justify-content: center;
 }
 
 .item {
-  width: 500px;
-  background-color: aqua;
+  width: 30%;
+  height: auto;
+  margin: 5px;
+  margin-bottom: 20px;
+  padding: 20px 0 12px 0;
+  text-align: center;
+  border-radius: 15px;
+  border: 2px solid #273746;
+
+  i {
+    color: #273746;
+  }
 }
->>>>>>> Stashed changes
+
+
+.item:hover {
+  background-color: #273746;
+  color: white;
+
+  i {
+    color: white;
+  }
+}
+
+.new-order {
+  width: 100%;
+}
+
+.btn {
+  width: 80%;
+  height: 51px;
+  margin: auto;
+  display: block;
+  border-radius: 15px;
+}

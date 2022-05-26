@@ -3,32 +3,53 @@
     <h1>Cafu Stock</h1>
 </div>
 
-<div class="home">
+<div class="dashboard">
     <!-- <cdk-virtual-scroll-viewport itemSize="50" class="list">
         <h3>Results from BUSCADOR</h3>
         <app-list [items]="itemExample"></app-list>
     </cdk-virtual-scroll-viewport>
 
     <div class="search">
-<<<<<<< Updated upstream
         <input type="text" placeholder="Search...">
-=======
         <input #searchInput type="text" placeholder="Search...">
         <button class="btn" >Search</button>
     </div> -->
 
     <div class="setup">
-      <div class="item orders">
+      <div class="item" (click)="navigateTo('orders')">
+        <i class="fa-solid fa-cart-shopping fa-2x"></i>
         <h3>Orders</h3>
       </div>
 
-      <div class="item sales">
+      <div class="item" (click)="navigateTo('sales')">
+        <i class="fa-solid fa-circle-check fa-2x"></i>
         <h3>Sales</h3>
       </div>
 
-      <div class="item stock">
-        <h3>Stock</h3>
+      <div class="item" (click)="navigateTo('stock')">
+        <i class="fa-solid fa-box-archive fa-2x"></i>
+        <h3>Inventory</h3>
       </div>
->>>>>>> Stashed changes
+
+      <div class="item">
+        <i class="fa-solid fa-users fa-2x"></i>
+        <h3>Clients</h3>
+      </div>
+
+      <div class="item">
+        <i class="fa-solid fa-circle-plus fa-2x"></i>
+        <h3>New article</h3>
+      </div>
+    </div>
+
+    <div class="new-order">
+      <button class="btn">
+        <i class="fa-solid fa-cart-plus"></i>
+        New Order
+      </button>
     </div>
 </div>
+
+<footer style="height: 50px;">
+
+</footer>

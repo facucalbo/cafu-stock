@@ -5,7 +5,7 @@ import { AuthComponent } from './auth/auth.component';
 import { ComponentsModule } from '../components/components.module';
 import { StockListComponent } from './stock-list/stock-list.component';
 import { RealizedComponent } from './sales/realized/realized.component';
-import { UnrealizedComponent } from './sales/unrealized/unrealized.component';
+import { OrdersComponent } from './sales/order/order.component';
 import { ScrollingModule } from '@angular/cdk/scrolling';
 
 
@@ -15,7 +15,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     AuthComponent,
     StockListComponent,
     RealizedComponent,
-    UnrealizedComponent
+    OrdersComponent
   ],
   imports: [
     CommonModule,
@@ -27,7 +27,7 @@ import { ScrollingModule } from '@angular/cdk/scrolling';
     AuthComponent,
     StockListComponent,
     RealizedComponent,
-    UnrealizedComponent
+    OrdersComponent
   ]
 })
 export class PagesModule { }
