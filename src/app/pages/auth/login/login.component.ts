@@ -19,12 +19,12 @@ export class LoginComponent {
   constructor(private fb: FormBuilder, private userService: UserService, private router: Router) { }
 
   public forma: FormGroup = this.fb.group({
-    username: ['', [Validators.required]],
-    password: ['', [Validators.required]],
+    username: ['', Validators.required],
+    password: ['', Validators.required],
   })
 
   validate(field: string) {
-    return false;
+    return this.forma.controls[field].invalid && this.forma.controls[field].touched;
   }
   
   save() {
@@ -34,10 +34,14 @@ export class LoginComponent {
       })
     }
 
-    const userData = this.forma.value;
-
-    // if(responseIsOk) {
-    //   this.router.navigate(['/auth/login']);
-    // }
+    const {username, password} = this.forma.value;
+    
+    this.userService.login(username, password)
+      .subscribe( res => {
+        if(!res.error) {
+          this.router.navigate(['home']);
+        }
+        // res.headers.get('set-cookie')
+      })
   }
 }

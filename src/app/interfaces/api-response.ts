@@ -12,7 +12,8 @@ export interface UserRequest {
 
 export interface Body {
     _id: string,
-    alredyExist?: boolean,    
+    alredyExist?: boolean,   
+    token?: string, 
     name: string,
     username: string,
     email: string,

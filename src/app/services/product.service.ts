@@ -26,7 +26,7 @@ export class ProductService {
   }
 
   searchProduct( text: String ): Observable<Body[]> {
-    return this.http.get<ItemResponse>(`${this.basicUrl}/product/${ text }`)
+    return this.http.get<ItemResponse>(`${this.basicUrl}/product/search/${ text }`)
       .pipe(
         map( resp => resp.body)
       );
