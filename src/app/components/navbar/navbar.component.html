@@ -7,19 +7,50 @@
             </li>
             <div class="items pointer">
                 <li>
-                    <a (click)="navigateTo('stock')"> Stock list </a>
+                    <i class="fa-solid fa-box-archive fa-2x"></i>
+                    <a (click)="navigateTo('inventory')"> Inventory </a>
                 </li>
 
                 <li class="dropdown">
-                    <!-- <div class="dropdown-select"> -->
-                    <!-- <a> Sales </a> -->
-                    <!-- </div> -->
-
-                    <a (click)="navigateTo('sales')">Realized</a>
-                    <a (click)="navigateTo('orders')" >Unrealized</a>
+                    <i class="fa-solid fa-circle-check fa-2x"></i>
+                    <a (click)="navigateTo('sales')">Sales</a>
+                </li>
+                <li>
+                    <i class="fa-solid fa-cart-shopping fa-2x"></i>
+                    <a (click)="navigateTo('orders')" >Orders</a>
+                </li>
+                <li>
+                    <i class="fa-solid fa-users fa-2x"></i>
+                    <a>Clients</a>
+                </li>
+                <li>
+                    <i class="fa-solid fa-circle-plus fa-2x"></i>
+                    <a>New Article</a>
                 </li>
             </div>
         </div>
+
+        <!--    <div class="setup">
+      <div class="item" (click)="navigateTo('orders')">
+        <h3>Orders</h3>
+      </div>
+
+      <div class="item" (click)="navigateTo('sales')">
+        <h3>Sales</h3>
+      </div>
+
+      <div class="item" (click)="navigateTo('stock')">
+        <h3>Inventory</h3>
+      </div>
+
+      <div class="item">
+        <h3>Clients</h3>
+      </div>
+
+      <div class="item">
+        <h3>New article</h3>
+      </div>
+    </div> -->
 
         <div class="auth pointer">
             <li>

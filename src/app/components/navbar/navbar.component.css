@@ -8,10 +8,10 @@ nav {
     left: 0;
     overflow-x: hidden;
     background-color: #273746;
-    color: white;
     padding-top: 20px;
-
     font-size: smaller;
+    
+    color: rgba(255, 255, 255, 0.562);
 }
 
 ul {
@@ -20,17 +20,25 @@ ul {
     padding: 0;
 }
 
-li a {
-    display: block;
+li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     text-align: center;
-    padding: 17px 16px;
-    text-decoration: none;
-    box-sizing: border-box;
-    margin-bottom: 3px;
+    padding: 15px;
 }
 
-li a:hover {
+li a {
+    display: block;
+    text-decoration: none;
+    box-sizing: border-box;
+    margin-top: 0.5rem;
+}
+
+li:hover {
   background-color: rgba(0, 0, 0, 0.3);
+  color: white;
 }
 
 .logo {
