@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Item } from '../../interfaces/product-response';
+import { map } from 'rxjs';
+import { DataService } from 'src/app/services/data.service';
+import { ProductService } from 'src/app/services/product.service';
+import { Body } from '../../interfaces/product-response';
 
 @Component({
   selector: 'app-stock-list',
@@ -8,45 +11,64 @@ import { Item } from '../../interfaces/product-response';
 })
 export class StockListComponent implements OnInit {
 
-  public itemExample: Item[] = [
-    {
-      id:    '1111',
-      name:    'pila',
-      type:    'pila',
-      brand:    'duracell',
-      model:    'AAA',
-      cant:    30,
-      stock:    20,
-    },
-    {
-      id:    '2222',
-      name:    'afeitadora',
-      type:    'afeitadora',
-      brand:    'gillete',
-      model:    'max 3',
-      cant:    12,
-      stock:    10,
-    },
-    {
-      id:    '3333',
-      name:    'chicle',
-      type:    'chicle',
-      brand:    'beldent',
-      model:    'infinit',
-      cant:    20,
-      stock:    50,
-    }
-  ]
+  public products: Body[] = [];
+  public selectedProductId: string = '';
 
-  constructor( ) { }
+  constructor( private productService: ProductService, public dataService: DataService ) { }
 
   ngOnInit(): void {
+
+    this.getProducts();
+
+  }
+
+  getProducts() {
+    this.productService.getProducts()
+      .subscribe( products => {
+        this.products = products;
+      })
+  }
+
+  searchProducts( text: string ) {
+    this.productService.searchProduct( text )
+      .subscribe( p => {
+        this.products = p;
+      })
   }
 
   orderByStock() {
-    console.log(this.itemExample);
-    this.itemExample.sort(( a, b ) => b.stock - a.stock );
-    console.log(this.itemExample);
+    this.products.sort(( a, b ) => b.stock - a.stock );
+  }
+
+  openModal() {
+    this.dataService.modalIsOpen = true
+  }
+
+  pushProduct(product: Body) {
+    this.products.push(product);
+    this.searchProducts('');
+  }
+
+  deleteProduct() {
+    this.productService.deleteProduct( this.selectedProductId )
+      .subscribe( response => {
+        // this.products.filter( (p, index) => {
+        //   console.log(p._id + ' p._id ');
+        //   console.log(this.selectedProductId + ' selectedProductId');
+        //   if( p._id == this.selectedProductId ) {
+        //     console.log(p._id);
+        //     console.log(index);
+        //     this.products.splice(index, 1);
+        //   }
+        // })
+      })
+      const found = this.products.findIndex( p => p._id == this.selectedProductId)
+      this.products.splice(found, 1);
+      this.selectedProductId = '';
+  }
+
+  selectedProduct( id: string ) {
+    this.selectedProductId = id;
   }
 
 }

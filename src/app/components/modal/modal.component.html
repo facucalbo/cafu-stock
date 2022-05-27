@@ -1,0 +1,22 @@
+
+<div class="modal">
+  <div *ngIf="form">
+    <div class="modal-header">
+        <h3>Add new product...</h3>
+        <button (click)="closeModal()" class="close"></button>
+    </div>
+    <div class="modal-body">
+        <app-product-form (modalStatus)="sendModal($event)"></app-product-form>
+    </div>
+    <!-- <div class="modal-footer">
+      <button class="confirm-btn">Confirm</button>
+    </div> -->
+  </div>
+
+  <div *ngIf="deleted">
+    <div class="modal-body">
+        <img src="/assets/box-logo.png" alt="">
+    </div>
+  </div>
+
+</div>

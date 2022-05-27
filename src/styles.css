@@ -55,6 +55,7 @@ body {
 
     .row {
         /* TODO=Responsive (breakpoints) */
+        flex-basis: 100%;
     }
 
     .col {

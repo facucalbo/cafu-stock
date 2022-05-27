@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { Item } from 'src/app/interfaces/product-response';
+import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
+import { Body } from '../../interfaces/product-response';
 
 @Component({
   selector: 'app-list',
@@ -8,8 +8,9 @@ import { Item } from 'src/app/interfaces/product-response';
 })
 export class ListComponent implements OnInit {
 
-  @Input() items: Item[] = [];
+  @Input() items: Body[] = [];
   @Input() buttons: boolean = false;
+  @Output() selected = new EventEmitter<string>();
 
   constructor() { }
 
@@ -20,4 +21,7 @@ export class ListComponent implements OnInit {
     this.items.sort( (a, b) => a.stock - b.stock );
   }
 
+  selectedRow(id: string) {
+    this.selected.emit(id);
+  }
 }

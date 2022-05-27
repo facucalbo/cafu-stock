@@ -54,7 +54,10 @@
 
         <div class="auth pointer">
             <li>
-                <a> USER </a>
+                <a (click)="navigateTo('auth/login')">Log In</a>
+            </li>
+            <li>
+                <a (click)="navigateTo('auth/signup')">Sign Up</a>
             </li>
         </div>
     </ul>

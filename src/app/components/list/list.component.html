@@ -4,16 +4,17 @@
         <li> Prod </li>
         <li> Marca </li>
         <li> Modelo </li>
-        <li> Cantidad </li>
+        <li> Bulto </li>
         <li> Stock </li>
+        <li> Precio </li>
     </ul>
 </div>
 
 <div *ngFor="let item of items">
     <div class="row">
-        <ul class="row item-col product-row pointer">
+        <ul class="row item-col product-row pointer" (click)="selectedRow(item._id)">
             <li>
-                <p> {{ item.name | titlecase }} </p>
+                <p> {{ item.type | titlecase }} </p>
             </li>
             <li>
                 <p> {{ item.brand | titlecase }} </p>
@@ -27,51 +28,9 @@
             <li>
                 <p> {{ item.stock }} </p>
             </li>
-        </ul>
-        <ul class="buttons-row" *ngIf="buttons">
-            <li >
-                <button class="btn pointer">Sell</button>
-            </li>
-            <li> 
-                <button class="btn pointer">Update</button>
-            </li>
             <li>
-                <button class="btn pointer">Delete</button>
+                <p> {{ item.price | currency:'ARS':'symbol-narrow':'.2-2' }} </p>
             </li>
         </ul>
-        
     </div>
 </div>
-
-<!-- <div class="" *ngFor="let item of items">
-    <div style="display: flex; flex-direction: row;">
-        <ul class="row item-col pointer row-items" style="flex-basis: 75%;">
-            <li>
-                {{ item.name | titlecase }} 
-            </li>
-            <li>
-                {{ item.brand | titlecase }} 
-            </li>
-            <li>
-                {{ item.model |titlecase }} 
-            </li>
-            <li>
-                x{{ item.cant }} 
-            </li>
-            <li>
-                {{ item.stock }} 
-            </li>
-        </ul>
-        <ul class="" style="flex-basis: 25%; display: flex;">
-            <li *ngIf="buttons">
-                <button class="btn pointer">Sell</button>
-            </li>
-            <li *ngIf="buttons"> 
-                <button class="btn pointer">Update</button>
-            </li>
-            <li *ngIf="buttons">
-                <button class="btn pointer">Delete</button>
-            </li>
-        </ul>
-    </div>
-</div> -->

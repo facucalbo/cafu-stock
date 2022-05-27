@@ -1,0 +1,42 @@
+<form [formGroup]="forma" (ngSubmit)="save()">
+
+    <div class="row">
+        <div class="field">
+            <label for="type" class="form__label">Type </label>
+            <input type="text" placeholder="pilas" formControlName="type" class="form__field" [class.is-invalid]="validate('type')">
+            <span *ngIf="validate('type')">required</span>
+        </div>
+
+        <div class="field">
+            <label for="brand">Brand </label>
+            <input type="text" placeholder="duracell" formControlName="brand" class="form__field" [class.is-invalid]="validate('brand')">
+            <span *ngIf="validate('brand')">required</span>
+        </div>
+
+        <div class="field">
+            <label for="model">Model </label>
+            <input type="text" placeholder="aaa" formControlName="model" class="form__field" [class.is-invalid]="validate('model')">
+            <span *ngIf="validate('model')">required</span>
+        </div>
+
+        <div class="field">
+            <label for="cant">Quantity </label>
+            <input type="number" placeholder="bulto" formControlName="package" class="form__field" [class.is-invalid]="validate('package')">
+            <span *ngIf="validate('package')">required</span>
+        </div>
+
+        <div class="field">
+            <label for="stock">Stock </label>
+            <input type="number" placeholder="stock" formControlName="stock" class="form__field" [class.is-invalid]="validate('stock')">
+            <span *ngIf="validate('stock')">required</span>
+        </div>
+
+        <div class="field">
+            <label for="price">Price </label>
+            <input type="number" placeholder="precio" formControlName="price" class="form__field" [class.is-invalid]="validate('price')">
+            <span *ngIf="validate('price')">required</span>
+        </div>
+
+    </div>
+    <button type="submit" class="btn">Add</button>
+</form>

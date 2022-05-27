@@ -41,6 +41,23 @@ h2 {
     flex-grow: 6;
 }
 
+.btn {
+    height: 100%;
+    width: 40px;
+    margin-left: 10px;
+    font-size: 1.5rem;
+    color:#273746;
+    background-color: #ecf0f1;
+    border: 2px solid #273746;
+    border-radius: 6px;
+}
+
+.btn:hover {
+    color: white;
+    background-color: #273746;
+    border-color: #273746;
+}
+
 .dropdown {
     flex-grow: 3;
     position: relative;
@@ -97,4 +114,34 @@ h2 {
 .dropdown-list__item:hover {
     background-color: #273746;
     color: white;
+}
+
+.modal-bg {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+
+.list-abm {
+    margin-top: 20px;
+}
+
+.list {
+    flex-grow: 1;
+}
+
+.abm {
+    flex-grow: 1;
+    justify-self: center;
+}
+
+.abm .btn {
+    height: 40px;
+    width: 46%;
 }

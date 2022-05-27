@@ -1,0 +1,24 @@
+<div class="box">
+    <div class="form">
+        <h2>Log in your Account</h2>
+
+        <form [formGroup]="forma" (ngSubmit)="save()">
+            <div class="form-container">
+                <div class="field">
+                    <input type="text" placeholder="Username" formControlName="username" class="form__field" id="username" [class.is-invalid]="validate('username')">
+                    <span *ngIf="validate('username')" id="username-label">{{ formSpans.username }}</span>
+                </div>
+    
+                <div class="field">
+                    <input type="password" placeholder="Password" formControlName="password" class="form__field" [class.is-invalid]="validate('password')">
+                    <span *ngIf="validate('password')">{{ formSpans.password }}</span>
+                </div>                
+                <button class="btn">Log In</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="design">
+        <h2>CafuStock</h2>
+    </div>
+</div>
