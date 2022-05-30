@@ -19,10 +19,14 @@ export class ProductService {
   }
 
   getProducts(): Observable<Body[]> {
-    return this.http.get<ItemResponse>(`${this.basicUrl}/product/owner/624c9112c77c569f0a789476`)
+    return this.http.get<ItemResponse>(`${this.basicUrl}/product/owner/624c9112c77c569f0a789476`, {withCredentials: true, observe: 'body'})
       .pipe(
         map( (resp) => resp.body)
       );
+  }
+
+  getYOU() {
+    return this.http.get(`${this.basicUrl}/product/owner/624c9112c77c569f0a789476`, {withCredentials: true, observe: 'response'})
   }
 
   searchProduct( text: String ): Observable<Body[]> {

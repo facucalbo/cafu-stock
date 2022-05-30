@@ -17,8 +17,8 @@ export class UserService {
   }
 
   login( username: string, password: string ): Observable<UserResponse> {
-    const params = { username, password };
+    const params = { username, password, withCredentials: true };
     // const headers = 
-    return this.http.post<UserResponse>(`${this.basicUrl}/auth/login`, {username, password});
+    return this.http.post<UserResponse>(`${this.basicUrl}/auth/login`, params);
   }
 }

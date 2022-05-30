@@ -20,12 +20,21 @@ export class InventoryComponent implements OnInit {
 
     this.getProducts();
 
+    this.getYOU();
+
   }
 
   getProducts() {
     this.productService.getProducts()
       .subscribe( products => {
         this.products = products;
+      })
+  }
+
+  getYOU() {
+    this.productService.getYOU()
+      .subscribe( r => {
+        console.log(r.headers);
       })
   }
 
