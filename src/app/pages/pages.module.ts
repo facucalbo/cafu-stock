@@ -7,9 +7,9 @@ import { AppRoutingModule } from '../app-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 
 import { AuthComponent } from './auth/auth.component';
-import { StockListComponent } from './stock-list/stock-list.component';
-import { RealizedComponent } from './sales/realized/realized.component';
-import { OrdersComponent } from './sales/order/order.component';
+import { InventoryComponent } from './inventory/inventory.component';
+import { SalesComponent } from './sales/sales.component';
+import { OrdersComponent } from './order/order.component';
 import { LoginComponent } from './auth/login/login.component';
 import { SignupComponent } from './auth/signup/signup.component';
 
@@ -18,9 +18,9 @@ import { SignupComponent } from './auth/signup/signup.component';
   declarations: [
     HomeComponent,
     AuthComponent,
-    StockListComponent,
+    InventoryComponent,
     OrdersComponent,
-    RealizedComponent,
+    SalesComponent,
     LoginComponent,
     SignupComponent
   ],
@@ -34,8 +34,8 @@ import { SignupComponent } from './auth/signup/signup.component';
   exports: [
     HomeComponent,
     AuthComponent,
-    StockListComponent,
-    RealizedComponent,
+    InventoryComponent,
+    SalesComponent,
     OrdersComponent
   ]
 })

@@ -6,18 +6,18 @@
                 <img (click)="navigateTo('home')" class="pointer" src="/assets/box-logo.png" alt="">
             </li>
             <div class="items pointer">
-                <li>
+                <li (click)="navigateTo('inventory')">
                     <i class="fa-solid fa-box-archive fa-2x"></i>
-                    <a (click)="navigateTo('inventory')"> Inventory </a>
+                    <a> Inventory </a>
                 </li>
 
-                <li class="dropdown">
+                <li class="dropdown" (click)="navigateTo('sales')">
                     <i class="fa-solid fa-circle-check fa-2x"></i>
-                    <a (click)="navigateTo('sales')">Sales</a>
+                    <a>Sales</a>
                 </li>
-                <li>
+                <li (click)="navigateTo('orders')">
                     <i class="fa-solid fa-cart-shopping fa-2x"></i>
-                    <a (click)="navigateTo('orders')" >Orders</a>
+                    <a>Orders</a>
                 </li>
                 <li>
                     <i class="fa-solid fa-users fa-2x"></i>

@@ -2,24 +2,15 @@
 <app-mobile-back [text]="'Orders'" onclick="history.back()"></app-mobile-back>
 
 <div>
-    <h2>Pedidos</h2>
+    <h2>Pending orders</h2>
 </div>
 
 <div class="col list-container">
-    <div class="sale-info">
-        <h4>Nro. Pedido: xxxx</h4>
-    </div>
     <cdk-virtual-scroll-viewport itemSize="50" class="viewport">
         <!-- <app-list [items]="itemExample"></app-list> -->
     </cdk-virtual-scroll-viewport>
+    <button class="btn btn-generate">+ Generate order</button>
 
-    <div class="buttons">
-        <button class="btn cancel">
-            Cancelar
-        </button>
-
-        <button class="btn">
-            Concretar
-        </button>
-    </div>
+    <button class="btn">Sell order</button>
+    <div class="btn cancel">Cancel order</div>
 </div>

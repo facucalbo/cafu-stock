@@ -5,11 +5,11 @@ import { ProductService } from 'src/app/services/product.service';
 import { Body } from '../../interfaces/product-response';
 
 @Component({
-  selector: 'app-stock-list',
-  templateUrl: './stock-list.component.html',
-  styleUrls: ['./stock-list.component.css']
+  selector: 'app-inventory',
+  templateUrl: './inventory.component.html',
+  styleUrls: ['./inventory.component.css']
 })
-export class StockListComponent implements OnInit {
+export class InventoryComponent implements OnInit {
 
   public products: Body[] = [];
   public selectedProductId: string = '';

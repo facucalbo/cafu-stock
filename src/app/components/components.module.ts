@@ -7,6 +7,7 @@ import { ListComponent } from './list/list.component';
 import { MobileBackComponent } from './mobile-back/mobile-back.component';
 import { ProductFormComponent } from './product-form/product-form.component';
 import { ModalComponent } from './modal/modal.component';
+import { OrderItemComponent } from './order-item/order-item.component';
 
 
 
@@ -17,6 +18,7 @@ import { ModalComponent } from './modal/modal.component';
     MobileBackComponent,
     ProductFormComponent,
     ModalComponent,
+    OrderItemComponent,
   ],
   imports: [
     CommonModule,
