@@ -38,6 +38,7 @@ export class LoginComponent {
     
     this.userService.login(username, password)
       .subscribe( res => {
+        console.log(res);
         if(!res.error) {
           this.router.navigate(['home']);
         }

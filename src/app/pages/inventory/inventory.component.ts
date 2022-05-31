@@ -34,7 +34,7 @@ export class InventoryComponent implements OnInit {
   getYOU() {
     this.productService.getYOU()
       .subscribe( r => {
-        console.log(r.headers);
+        console.log(r);
       })
   }
 

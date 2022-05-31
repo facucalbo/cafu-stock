@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaderResponse, HttpHeaders } from '@angular/common/http';
+import { HttpClient, HttpHeaderResponse, HttpHeaders, HttpResponse } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { UserRequest, UserResponse } from '../interfaces/api-response';
@@ -18,7 +18,6 @@ export class UserService {
 
   login( username: string, password: string ): Observable<UserResponse> {
     const params = { username, password, withCredentials: true };
-    // const headers = 
     return this.http.post<UserResponse>(`${this.basicUrl}/auth/login`, params);
   }
 }

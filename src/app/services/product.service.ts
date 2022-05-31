@@ -19,7 +19,7 @@ export class ProductService {
   }
 
   getProducts(): Observable<Body[]> {
-    return this.http.get<ItemResponse>(`${this.basicUrl}/product/owner/624c9112c77c569f0a789476`, {withCredentials: true, observe: 'body'})
+    return this.http.get<ItemResponse>(`${this.basicUrl}/product/owner/624c9112c77c569f0a789476`, {withCredentials: true})
       .pipe(
         map( (resp) => resp.body)
       );
