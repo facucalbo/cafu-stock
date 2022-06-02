@@ -1,5 +1,4 @@
-import { Component, HostListener, OnInit } from '@angular/core';
-import { UserService } from './services/user.service';
+import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -8,10 +7,10 @@ import { UserService } from './services/user.service';
 })
 export class AppComponent implements OnInit{
 
-  constructor(private userService: UserService) {}
+  constructor( ) {}
 
   ngOnInit(): void {
-    this.userService
+    
   }
   title = 'cafu-stock';
 

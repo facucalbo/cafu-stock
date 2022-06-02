@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { ItemResponse } from 'src/app/interfaces/product-response';
-import { ProductService } from 'src/app/services/product.service';
+import { ItemResponse } from 'src/app/interfaces/inventory-response';
 
 @Component({
   selector: 'app-home',
@@ -40,7 +39,7 @@ export class HomeComponent implements OnInit {
 //     },
 // ]
 
-  constructor(private router: Router, private productService: ProductService ) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }

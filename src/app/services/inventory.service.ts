@@ -1,32 +1,34 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { ItemRequest, ItemResponse, Body } from '../interfaces/product-response';
+import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { ItemRequest, ItemResponse, Body } from '../interfaces/inventory-response';
 import { map, Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
-export class ProductService {
+export class InventoryService {
 
   // mongodb+srv://facundo:<password>@first-cluster.fhxif.mongodb.net/test
 
-  basicUrl = 'http://localhost:3000';
+  basicUrl = environment.apiUrl;
+  uid = localStorage.getItem(environment.user_id)
+
+  headers = new HttpHeaders({
+    'Authorization': `Bearer ${localStorage.getItem(environment.access_token)!}`
+  })
 
   constructor( private http: HttpClient ) { }
 
   addNewProduct( product: ItemRequest): Observable<ItemRequest> {
-    return this.http.post<ItemRequest>(` ${this.basicUrl}/product`, product)
+    return this.http.post<ItemRequest>(` ${this.basicUrl}/product`, { product })
   }
 
   getProducts(): Observable<Body[]> {
-    return this.http.get<ItemResponse>(`${this.basicUrl}/product/owner/624c9112c77c569f0a789476`, {withCredentials: true})
+    return this.http.get<ItemResponse>(`${this.basicUrl}/product/${this.uid}`, {headers: this.headers}) 
       .pipe(
         map( (resp) => resp.body)
       );
-  }
-
-  getYOU() {
-    return this.http.get(`${this.basicUrl}/product/owner/624c9112c77c569f0a789476`, {withCredentials: true, observe: 'response'})
   }
 
   searchProduct( text: String ): Observable<Body[]> {

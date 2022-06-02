@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ItemResponse } from 'src/app/interfaces/product-response';
+import { ItemResponse } from 'src/app/interfaces/inventory-response';
 
 @Component({
   selector: 'app-unrealized',

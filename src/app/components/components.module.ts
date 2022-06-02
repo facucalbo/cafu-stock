@@ -8,6 +8,7 @@ import { MobileBackComponent } from './mobile-back/mobile-back.component';
 import { ProductFormComponent } from './product-form/product-form.component';
 import { ModalComponent } from './modal/modal.component';
 import { OrderItemComponent } from './order-item/order-item.component';
+import { LogoutComponent } from './logout/logout.component';
 
 
 
@@ -19,6 +20,7 @@ import { OrderItemComponent } from './order-item/order-item.component';
     ProductFormComponent,
     ModalComponent,
     OrderItemComponent,
+    LogoutComponent,
   ],
   imports: [
     CommonModule,

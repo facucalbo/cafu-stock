@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Body } from 'src/app/interfaces/product-response';
+import { Body } from 'src/app/interfaces/inventory-response';
 import { DataService } from 'src/app/services/data.service';
 import { ProductFormComponent } from '../product-form/product-form.component';
 

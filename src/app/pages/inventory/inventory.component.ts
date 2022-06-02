@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
-import { ProductService } from 'src/app/services/product.service';
-import { Body } from '../../interfaces/product-response';
+import { InventoryService } from 'src/app/services/inventory.service';
+import { Body } from '../../interfaces/inventory-response';
 
 @Component({
   selector: 'app-inventory',
@@ -14,32 +14,21 @@ export class InventoryComponent implements OnInit {
   public products: Body[] = [];
   public selectedProductId: string = '';
 
-  constructor( private productService: ProductService, public dataService: DataService ) { }
+  constructor( private inventoryService: InventoryService, public dataService: DataService ) { }
 
   ngOnInit(): void {
-
     this.getProducts();
-
-    this.getYOU();
-
   }
 
   getProducts() {
-    this.productService.getProducts()
+    this.inventoryService.getProducts()
       .subscribe( products => {
         this.products = products;
       })
   }
 
-  getYOU() {
-    this.productService.getYOU()
-      .subscribe( r => {
-        console.log(r);
-      })
-  }
-
   searchProducts( text: string ) {
-    this.productService.searchProduct( text )
+    this.inventoryService.searchProduct( text )
       .subscribe( p => {
         this.products = p;
       })
@@ -59,7 +48,7 @@ export class InventoryComponent implements OnInit {
   }
 
   deleteProduct() {
-    this.productService.deleteProduct( this.selectedProductId )
+    this.inventoryService.deleteProduct( this.selectedProductId )
       .subscribe( response => {
         // this.products.filter( (p, index) => {
         //   console.log(p._id + ' p._id ');

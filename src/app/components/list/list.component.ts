@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { Body } from '../../interfaces/product-response';
+import { Body } from '../../interfaces/inventory-response';
 
 @Component({
   selector: 'app-list',

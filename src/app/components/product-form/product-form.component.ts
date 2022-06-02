@@ -1,7 +1,7 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Body, ItemRequest } from 'src/app/interfaces/product-response';
-import { ProductService } from 'src/app/services/product.service';
+import { Body, ItemRequest } from 'src/app/interfaces/inventory-response';
+import { InventoryService } from 'src/app/services/inventory.service';
 
 @Component({
   selector: 'app-product-form',
@@ -11,7 +11,7 @@ import { ProductService } from 'src/app/services/product.service';
 export class ProductFormComponent implements OnInit {
 
 
-  constructor( private fb: FormBuilder, private productService: ProductService ) {
+  constructor( private fb: FormBuilder, private inventoryService: InventoryService ) {
     this.createListener();
    }
 
@@ -46,7 +46,7 @@ export class ProductFormComponent implements OnInit {
 
     const item = this.forma.value;
 
-    this.productService.addNewProduct( item )
+    this.inventoryService.addNewProduct( item )
       .subscribe( product => {
         if(product) {
           this.modalStatus.emit( item );

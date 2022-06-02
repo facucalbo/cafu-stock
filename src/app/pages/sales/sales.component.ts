@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
-import { ItemResponse } from '../../interfaces/product-response';
+import { ItemResponse } from '../../interfaces/inventory-response';
 
 @Component({
   selector: 'app-sales',
