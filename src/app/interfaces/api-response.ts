@@ -10,10 +10,20 @@ export interface UserRequest {
     password:    number;
 }
 
+export interface AuthResponse {
+    error: boolean,
+    body: {
+        token?: string,
+        refreshToken?: string,
+        uid?: string,
+    }
+}
+
 export interface Body {
     _id: string,
     alredyExist?: boolean,   
     token?: string,
+    refreshToken?: string,
     uid?: string,
     name: string,
     username: string,

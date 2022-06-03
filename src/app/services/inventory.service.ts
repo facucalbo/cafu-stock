@@ -25,6 +25,8 @@ export class InventoryService {
   }
 
   getProducts(): Observable<Body[]> {
+    const response = this.http.get<ItemResponse>(`${this.basicUrl}/product/${this.uid}`, {headers: this.headers});
+    console.log(response);
     return this.http.get<ItemResponse>(`${this.basicUrl}/product/${this.uid}`, {headers: this.headers}) 
       .pipe(
         map( (resp) => resp.body)

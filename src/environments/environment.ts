@@ -6,6 +6,7 @@ export const environment = {
   production: false,
   apiUrl: 'http://localhost:3000/api/v1',
   access_token: 'c_token',
+  refresh_token: 'r_token',
   user_id: 'uid',
 };
 

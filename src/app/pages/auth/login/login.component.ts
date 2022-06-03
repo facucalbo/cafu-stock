@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { CookieService } from 'ngx-cookie-service';
-import { UserService } from 'src/app/services/user.service';
+import { AuthService } from 'src/app/services/auth.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -19,7 +19,7 @@ export class LoginComponent {
   // public formSpans = this.defaultSpans;
 
   constructor(private fb: FormBuilder, 
-              private userService: UserService, 
+              private auth: AuthService, 
               private router: Router,
               private cookieService: CookieService) { }
 
@@ -41,15 +41,16 @@ export class LoginComponent {
 
     const {username, password} = this.forma.value;
     
-    this.userService.login(username, password)
+    this.auth.authenticate(username, password)
       .subscribe( res => {
         console.log(res);
         if(!res.error && res.body.token) {
           this.router.navigate(['home']);
           
           // this.cookieService.set(environment.credential_token, res.body.token, {path: '/', sameSite: 'None', secure: false} )
-          localStorage.setItem(environment.access_token, res.body.token)
-          localStorage.setItem(environment.user_id, res.body.uid || '')
+          localStorage.setItem(environment.access_token, res.body.token);
+          localStorage.setItem(environment.refresh_token, res.body.refreshToken || '');
+          localStorage.setItem(environment.user_id, res.body.uid || '');
 
           return ;
         }
