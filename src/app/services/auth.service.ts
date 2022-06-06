@@ -13,8 +13,8 @@ export class AuthService {
 
   constructor(private http: HttpClient) { }
 
-  authenticate( username: string, password: string ): Observable<AuthResponse> {
-    const params = { 
+  login( username: string, password: string ): Observable<AuthResponse> {
+    const params = {
       username,
       password,
       withCredentials: true
@@ -23,9 +23,8 @@ export class AuthService {
     return this.http.post<AuthResponse>(`${this.basicUrl}/auth/login`, params);
   }
 
-  authorizate(): Observable<AuthResponse> {
-    const accessToken = localStorage.getItem(environment.access_token);
-
-    return this.http.post<AuthResponse>(`${this.basicUrl}/auth/refresh-token`, {headers: accessToken});
+  // refresh the access token
+  authenticate(): Observable<AuthResponse> {
+    return this.http.get<AuthResponse>(`${this.basicUrl}/auth/refresh-token`);
   }
 }

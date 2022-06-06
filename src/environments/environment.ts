@@ -8,6 +8,7 @@ export const environment = {
   access_token: 'c_token',
   refresh_token: 'r_token',
   user_id: 'uid',
+  invalid_token: 'token_invalid'
 };
 
 /*

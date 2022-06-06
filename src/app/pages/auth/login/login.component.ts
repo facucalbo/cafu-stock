@@ -18,8 +18,8 @@ export class LoginComponent {
   }
   // public formSpans = this.defaultSpans;
 
-  constructor(private fb: FormBuilder, 
-              private auth: AuthService, 
+  constructor(private fb: FormBuilder,
+              private auth: AuthService,
               private router: Router,
               private cookieService: CookieService) { }
 
@@ -31,7 +31,7 @@ export class LoginComponent {
   validate(field: string) {
     return this.forma.controls[field].invalid && this.forma.controls[field].touched;
   }
-  
+
   save() {
     if( this.forma.invalid ){
       return Object.values( this.forma.controls ).forEach( control => {
@@ -40,17 +40,17 @@ export class LoginComponent {
     }
 
     const {username, password} = this.forma.value;
-    
-    this.auth.authenticate(username, password)
+
+    this.auth.login(username, password)
       .subscribe( res => {
         console.log(res);
         if(!res.error && res.body.token) {
           this.router.navigate(['home']);
-          
+
           // this.cookieService.set(environment.credential_token, res.body.token, {path: '/', sameSite: 'None', secure: false} )
-          localStorage.setItem(environment.access_token, res.body.token);
-          localStorage.setItem(environment.refresh_token, res.body.refreshToken || '');
-          localStorage.setItem(environment.user_id, res.body.uid || '');
+          // localStorage.setItem(environment.access_token, res.body.token);
+          // localStorage.setItem(environment.refresh_token, res.body.refreshToken || '');
+          // localStorage.setItem(environment.user_id, res.body.uid || '');
 
           return ;
         }

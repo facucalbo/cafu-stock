@@ -7,7 +7,7 @@ import { UserRequest, UserResponse } from '../interfaces/api-response';
 @Injectable({
   providedIn: 'root'
 })
-export class UserService { 
+export class UserService {
 
   basicUrl = environment.apiUrl;
 
