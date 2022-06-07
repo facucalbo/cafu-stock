@@ -25,6 +25,7 @@ export class AuthService {
 
   // refresh the access token
   authenticate(): Observable<AuthResponse> {
+    console.log('authenticate');
     return this.http.get<AuthResponse>(`${this.basicUrl}/auth/refresh-token`);
   }
 }

@@ -11,8 +11,8 @@ export class UnauthInterceptor implements HttpInterceptor {
     constructor(private auth: AuthService) {}
 
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<AuthResponse>> {
-      console.log('unauth req: ', req.headers);
-      this.auth.authenticate()
+      // console.log('unauth req: ', req.headers);
+      // this.auth.authenticate()
 
       return next.handle(req)
     }

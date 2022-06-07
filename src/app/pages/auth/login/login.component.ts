@@ -43,8 +43,7 @@ export class LoginComponent {
 
     this.auth.login(username, password)
       .subscribe( res => {
-        console.log(res);
-        if(!res.error && res.body.token) {
+        if(!res.error) {
           this.router.navigate(['home']);
 
           // this.cookieService.set(environment.credential_token, res.body.token, {path: '/', sameSite: 'None', secure: false} )

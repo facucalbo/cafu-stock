@@ -10,8 +10,6 @@ import { environment } from 'src/environments/environment';
 export class InventoryService {
 
   // mongodb+srv://facundo:<password>@first-cluster.fhxif.mongodb.net/test
-
-  basicUrl = environment.apiUrl;
   uid = localStorage.getItem(environment.user_id)
 
   headers = new HttpHeaders({
@@ -21,27 +19,26 @@ export class InventoryService {
   constructor( private http: HttpClient ) { }
 
   addNewProduct( product: ItemRequest): Observable<ItemRequest> {
-    return this.http.post<ItemRequest>(` ${this.basicUrl}/product`, { product })
+    return this.http.post<ItemRequest>(` ${environment.apiUrl}/product`, { product })
   }
 
   getProducts(): Observable<Body[]> {
-    const response = this.http.get<ItemResponse>(`${this.basicUrl}/product/${this.uid}`);
-    console.log(response);
-    return this.http.get<ItemResponse>(`${this.basicUrl}/product/${this.uid}`)
+    const response = this.http.get<ItemResponse>(`${environment.apiUrl}/product/${this.uid}`);
+    return this.http.get<ItemResponse>(`${environment.apiUrl}/product/${this.uid}`)
       .pipe(
         map( (resp) => resp.body)
       );
   }
 
   searchProduct( text: String ): Observable<Body[]> {
-    return this.http.get<ItemResponse>(`${this.basicUrl}/product/search/${ text }`)
+    return this.http.get<ItemResponse>(`${environment.apiUrl}/product/search/${ text }`)
       .pipe(
         map( resp => resp.body)
       );
   }
 
   deleteProduct( id: String ) {
-    return this.http.delete(`${this.basicUrl}/product/${ id }`);
+    return this.http.delete(`${environment.apiUrl}/product/${ id }`);
   }
 
 }

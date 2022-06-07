@@ -13,7 +13,7 @@ export interface UserRequest {
 export interface AuthResponse {
     error: boolean,
     body: {
-        token: string,
+        accessToken: string,
         refreshToken?: string,
         uid?: string,
     }
