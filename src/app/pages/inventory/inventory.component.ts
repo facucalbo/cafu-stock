@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { map } from 'rxjs';
 import { DataService } from 'src/app/services/data.service';
 import { InventoryService } from 'src/app/services/inventory.service';
-import { Body } from '../../interfaces/inventory-response';
+import { InventoryBody } from '../../interfaces/inventory-response';
 
 @Component({
   selector: 'app-inventory',
@@ -11,7 +11,7 @@ import { Body } from '../../interfaces/inventory-response';
 })
 export class InventoryComponent implements OnInit {
 
-  public products: Body[] = [];
+  public products: InventoryBody[] = [];
   public selectedProductId: string = '';
 
   constructor( private inventoryService: InventoryService, public dataService: DataService ) { }
@@ -42,7 +42,7 @@ export class InventoryComponent implements OnInit {
     this.dataService.modalIsOpen = true
   }
 
-  pushProduct(product: Body) {
+  pushProduct(product: InventoryBody) {
     this.products.push(product);
     this.searchProducts('');
   }

@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { Body, ItemRequest } from 'src/app/interfaces/inventory-response';
+import { InventoryBody, ItemRequest } from 'src/app/interfaces/inventory-response';
 import { InventoryService } from 'src/app/services/inventory.service';
 
 @Component({
@@ -27,7 +27,7 @@ export class ProductFormComponent implements OnInit {
     stock: ['', Validators.required],
     price: ['', Validators.required],
   });
-  
+
   ngOnInit(): void {
   }
 
@@ -35,7 +35,7 @@ export class ProductFormComponent implements OnInit {
     return this.forma.controls[field].invalid && this.forma.controls[field].touched
   }
 
-  @Output() modalStatus = new EventEmitter<Body>();
+  @Output() modalStatus = new EventEmitter<InventoryBody>();
 
   save(){
     if( this.forma.invalid ){

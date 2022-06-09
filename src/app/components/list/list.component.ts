@@ -1,5 +1,5 @@
 import { Component, Input, OnInit, Output, EventEmitter } from '@angular/core';
-import { Body } from '../../interfaces/inventory-response';
+import { InventoryBody } from '../../interfaces/inventory-response';
 
 @Component({
   selector: 'app-list',
@@ -8,7 +8,7 @@ import { Body } from '../../interfaces/inventory-response';
 })
 export class ListComponent implements OnInit {
 
-  @Input() items: Body[] = [];
+  @Input() items: InventoryBody[] = [];
   @Input() buttons: boolean = false;
   @Output() selected = new EventEmitter<string>();
 

@@ -1,6 +1,6 @@
 export interface ItemResponse {
     error: string;
-    body:  Body[];
+    body:  InventoryBody[];
 }
 
 export interface ItemRequest {
@@ -12,7 +12,7 @@ export interface ItemRequest {
     price: number;
 }
 
-export interface Body {
+export interface InventoryBody {
     _id:   string;
     type:  string;
     brand: string;

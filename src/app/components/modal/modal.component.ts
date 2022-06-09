@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { Body } from 'src/app/interfaces/inventory-response';
+import { InventoryBody } from 'src/app/interfaces/inventory-response';
 import { DataService } from 'src/app/services/data.service';
 import { ProductFormComponent } from '../product-form/product-form.component';
 
@@ -15,7 +15,7 @@ export class ModalComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  @Output() pushProduct = new EventEmitter<Body>();
+  @Output() pushProduct = new EventEmitter<InventoryBody>();
   @Input() form: boolean = false;
   @Input() deleted: boolean = false;
 
@@ -23,7 +23,7 @@ export class ModalComponent implements OnInit {
     this.dataService.modalIsOpen = false
   }
 
-  sendModal( form: Body ) {
+  sendModal( form: InventoryBody ) {
     this.dataService.modalIsOpen = false;
     this.pushProduct.emit( form );
   }

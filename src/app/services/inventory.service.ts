@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
-import { ItemRequest, ItemResponse, Body } from '../interfaces/inventory-response';
+import { ItemRequest, ItemResponse, InventoryBody } from '../interfaces/inventory-response';
 import { map, Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
@@ -22,7 +22,7 @@ export class InventoryService {
     return this.http.post<ItemRequest>(` ${environment.apiUrl}/product`, { product })
   }
 
-  getProducts(): Observable<Body[]> {
+  getProducts(): Observable<InventoryBody[]> {
     const response = this.http.get<ItemResponse>(`${environment.apiUrl}/product/${this.uid}`);
     return this.http.get<ItemResponse>(`${environment.apiUrl}/product/${this.uid}`)
       .pipe(
@@ -30,7 +30,7 @@ export class InventoryService {
       );
   }
 
-  searchProduct( text: String ): Observable<Body[]> {
+  searchProduct( text: String ): Observable<InventoryBody[]> {
     return this.http.get<ItemResponse>(`${environment.apiUrl}/product/search/${ text }`)
       .pipe(
         map( resp => resp.body)

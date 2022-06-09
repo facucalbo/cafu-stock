@@ -1,6 +1,6 @@
 export interface UserResponse {
     error: boolean,
-    body: Body,
+    body: UserBody,
 }
 
 export interface UserRequest {
@@ -12,19 +12,18 @@ export interface UserRequest {
 
 export interface AuthResponse {
     error: boolean,
-    body: {
-        accessToken: string,
-        refreshToken?: string,
-        uid?: string,
-    }
+    body: AuthBody,
 }
 
-export interface Body {
-    _id: string,
-    alredyExist?: boolean,
-    token?: string,
+export interface AuthBody {
+    accessToken: string,
     refreshToken?: string,
     uid?: string,
+}
+
+export interface UserBody {
+    _id: string,
+    alredyExist?: boolean,
     name: string,
     username: string,
     email: string,
