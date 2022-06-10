@@ -1,6 +1,6 @@
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { BehaviorSubject, filter, Observable, retry, Subject, switchMap, take, tap, throwError } from 'rxjs';
+import { BehaviorSubject, catchError, filter, finalize, Observable, retry, retryWhen, Subject, switchMap, take, tap, throwError } from 'rxjs';
 import { AuthResponse } from "../interfaces/api-response";
 import { AuthService } from "../services/auth.service";
 import { InventoryService } from '../services/inventory.service';
@@ -31,6 +31,28 @@ export class AuthInterceptor implements HttpInterceptor {
       console.log('authReq: ', authReq);
       return next.handle(authReq)
         .pipe(
+          // catchError( (error: HttpResponse) => {
+          //   if( error && error.status == 401){
+          //     if(this.isRefreshing) {
+          //       return this.tokenSubject.pipe(
+          //         filter( result => result !== null),
+          //         take(1),
+          //         switchMap((() => next.handle(this.addTokenHeader(authReq))))
+          //       )
+          //     }
+          //     this.isRefreshing = true;
+          //     this.tokenSubject.next(null);
+          //     return this.auth.authenticate().pipe(
+          //       switchMap(t => {
+          //         this.tokenSubject.next(t.accessToken)
+          //         return next.handle(this.addTokenHeader(req))
+          //       }),
+          //       finalize(() => this.isRefreshing = false)
+          //     ).subscribe();
+          //   } else {
+          //     return throwError(() => error);
+          //   }
+          // })
           tap({
             next: event => {
               if(event instanceof HttpResponse && event.body?.body.accessToken) {
@@ -44,7 +66,6 @@ export class AuthInterceptor implements HttpInterceptor {
             },
             error: (err) => {
               if(err.status === 401){
-
                 if(this.isRefreshing){
                   return this.tokenSubject.pipe(
                     filter(result => result !== null),
@@ -67,7 +88,8 @@ export class AuthInterceptor implements HttpInterceptor {
                 return throwError(() => err);
               }
             }
-          })
+          }),
+          retry()
         )
     }
 
