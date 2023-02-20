@@ -1,56 +1,30 @@
 
 <nav>
     <ul class="nav">
-        <div class="left">
-            <li class="logo">
-                <img (click)="navigateTo('home')" class="pointer" src="/assets/box-logo.png" alt="">
-            </li>
-            <div class="items pointer">
-                <li (click)="navigateTo('inventory')">
-                    <i class="fa-solid fa-box-archive fa-2x"></i>
-                    <a> Inventory </a>
-                </li>
+        <li class="logo">
+            <img (click)="navigateTo('home')" class="pointer" src="/assets/box-logo.png" alt="">
+        </li>
+        <li class="item pointer" (click)="navigateTo('inventory')">
+            <i class="fa-solid fa-box-archive fa-2x"></i>
+            <a> Inventory </a>
+        </li>
 
-                <li class="dropdown" (click)="navigateTo('sales')">
-                    <i class="fa-solid fa-circle-check fa-2x"></i>
-                    <a>Sales</a>
-                </li>
-                <li (click)="navigateTo('orders')">
-                    <i class="fa-solid fa-cart-shopping fa-2x"></i>
-                    <a>Orders</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-users fa-2x"></i>
-                    <a>Clients</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-circle-plus fa-2x"></i>
-                    <a>New Article</a>
-                </li>
-            </div>
-        </div>
-
-        <!--    <div class="setup">
-      <div class="item" (click)="navigateTo('orders')">
-        <h3>Orders</h3>
-      </div>
-
-      <div class="item" (click)="navigateTo('sales')">
-        <h3>Sales</h3>
-      </div>
-
-      <div class="item" (click)="navigateTo('stock')">
-        <h3>Inventory</h3>
-      </div>
-
-      <div class="item">
-        <h3>Clients</h3>
-      </div>
-
-      <div class="item">
-        <h3>New article</h3>
-      </div>
-    </div> -->
+        <li class="item pointer" (click)="navigateTo('sales')">
+            <i class="fa-solid fa-circle-check fa-2x"></i>
+            <a>Sales</a>
+        </li>
+        <li class="item pointer" (click)="navigateTo('orders')">
+            <i class="fa-solid fa-cart-shopping fa-2x"></i>
+            <a>Orders</a>
+        </li>
+        <li class="item pointer">
+            <i class="fa-solid fa-users fa-2x"></i>
+            <a>Clients</a>
+        </li>
+        <li class="item pointer">
+            <i class="fa-solid fa-circle-plus fa-2x"></i>
+            <a>New Article</a>
+        </li>
 
         <div class="auth pointer">
             <li>

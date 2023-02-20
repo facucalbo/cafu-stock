@@ -9,6 +9,10 @@ export class AuthInterceptor implements HttpInterceptor {
 
     constructor(private auth: AuthService) {}
 
+    // cuando llega un error 401 unauthorized del lado del servidor, le asignamos al header el refresh token
+    // y por cada response nos fijamos si nos llega un accessToken en el body, en caso de que llegue, lo guardamos en el sessionStorage o locaStorage
+    
+    // Habria que ver como hacer para que cuando llegue un 401,  se vuelva a mandar la request que largo el error.
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         const refreshToken = localStorage.getItem(environment.refresh_token);
         

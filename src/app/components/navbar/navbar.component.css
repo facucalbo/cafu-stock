@@ -1,44 +1,25 @@
 
 nav {
     height: 100%;
-    width: 100px;
+    /* width: 100%; */
     position: fixed;
     z-index: 1;
     top: 0;
     left: 0;
     overflow-x: hidden;
-    background-color: #273746;
+    background-color: white;
     padding-top: 20px;
     font-size: smaller;
-    
-    color: rgba(255, 255, 255, 0.562);
+    color: black
 }
 
 ul {
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-}
-
-li {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 15px;
-}
-
-li a {
-    display: block;
-    text-decoration: none;
-    box-sizing: border-box;
-    margin-top: 0.5rem;
 }
 
 li:hover {
-  background-color: rgba(0, 0, 0, 0.3);
-  color: white;
+  background-color: #ecf0f1;
+  color: black;
 }
 
 .logo {
@@ -50,4 +31,17 @@ li:hover {
 .logo img {
     width: 100%;
     height: auto;
+}
+
+.item {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    height: 50px;
+    padding-left: 10px;
+    border-radius: 20px 0 0 20px;
+}
+
+.item a {
+    margin-left: 10px;
 }

@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 body {
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    /* background-color: #ecf0f1; */
+    background-color: #ecf0f1;
     margin: 0;
     padding: 0;
 }
@@ -28,11 +28,6 @@ body {
 .background-color-4 {background-color: #95a5a6;}
 .background-color-5 {background-color: #3498db;}
 .background-color-6 {background-color: #2980b9;}
-
-.container {
-    margin: auto;
-}
-
 
 .row {
     display: flex;

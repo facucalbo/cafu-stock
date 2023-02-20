@@ -1,10 +1,24 @@
-div .list {
+/* div .list {
     flex-shrink: 0;
     width: 75%;
+} */
+.body {
+    display: grid;
+    grid-template-columns: repeat(24, 1fr);
+    width: 100vw;
+    height: 100vh;
 }
 
-.container {
-    margin: auto;
+.nav {
+    grid-column: 1/4;
+    width: 100%;
+    margin: 0;
+}
+
+.main {
+    grid-column: 4/25;
+    margin: 40px;
+    background-color: white;
 }
 
 @media (max-width: 768px) {
@@ -29,7 +43,7 @@ div .list {
 
  @media (min-width: 1400px){
     .container {
-        max-width: 1200px;
+        max-width: 1400px;
     }
 
  }

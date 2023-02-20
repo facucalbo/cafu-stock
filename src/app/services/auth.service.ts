@@ -24,8 +24,15 @@ export class AuthService {
   }
 
   authorizate(): Observable<AuthResponse> {
-    const accessToken = localStorage.getItem(environment.access_token);
 
-    return this.http.post<AuthResponse>(`${this.basicUrl}/auth/refresh-token`, {headers: accessToken});
+    return this.http.get<AuthResponse>(`${this.basicUrl}/auth/refresh-token`);
+  }
+
+  get accessToken() {
+    return localStorage.getItem(environment.access_token);
+  }
+
+  get refreshToken() {
+    return localStorage.getItem(environment.refresh_token);
   }
 }
